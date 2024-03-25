@@ -7,7 +7,7 @@ namespace HouseRentingSystem.Data.Models
     {
         public Category()
         {
-                this.Houses = new HashSet<House>();
+            this.Houses = new HashSet<House>();
         }
 
         [Key]
