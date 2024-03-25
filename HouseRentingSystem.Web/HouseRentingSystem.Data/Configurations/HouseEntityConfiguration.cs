@@ -14,6 +14,9 @@ namespace HouseRentingSystem.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<House> builder)
         {
+            builder.Property(h => h.CreatedOn)
+                .HasDefaultValue(DateTime.UtcNow);
+
             builder.HasOne(h => h.Category)
                 .WithMany(c => c.Houses)
                 .HasForeignKey(h => h.CategoryId)
