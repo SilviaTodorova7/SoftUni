@@ -1,4 +1,5 @@
 using HouseRentingSystem.Data;
+using HouseRentingSystem.Data.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,15 +15,21 @@ namespace HouseRentingSystem.Web
             var connectionString = builder
                 .Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 
-            builder.Services.AddDbContext<ApplicationDbContext>(options =>
+            builder.Services.AddDbContext<HouseRentingDbContext>(options =>
                 options.UseSqlServer(connectionString));
 
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-            builder.Services.AddDefaultIdentity<IdentityUser>(options => {
-                options.SignIn.RequireConfirmedAccount = false;
+            builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
+            {
+                options.SignIn.RequireConfirmedAccount = builder.Configuration.GetValue<bool>("Identity:SignIn:RequireConfirmedAccount");
+                options.Password.RequireLowercase = 
+                  builder.Configuration.GetValue<bool>("Identity:SignIn:RequireLowercase");
+                options.Password.RequireUppercase = builder.Configuration.GetValue<bool>("Identity:SignIn:RequireUppercase");
+                options.Password.RequireNonAlphanumeric = builder.Configuration.GetValue<bool>("Identity:SignIn:RequireNonAlphanumeric");
+                options.Password.RequiredLength = builder.Configuration.GetValue<int>("Identity:SignIn:RequiredLength");
             })
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+                .AddEntityFrameworkStores<HouseRentingDbContext>();
 
             builder.Services.AddControllersWithViews();
 
