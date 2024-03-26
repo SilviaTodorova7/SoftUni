@@ -41,7 +41,7 @@ namespace HouseRentingSystem.Data.Configurations
                 Title = "Big House Marina",
                 Address = "North London, UK (near the border)",
                 Description = "A big house for your whole family. Don't miss to buy a house with three bedrooms.",
-                ImageUrl = "https://www.luxury-architecture.net/wpcontent/uploads/2017/12/1513217889-7597-FAIRWAYS-010.jpg",
+                ImageUrl = "https://cf.bstatic.com/xdata/images/hotel/max1024x768/312698222.jpg?k=41a75acebf2081dd38133f5307c1be68e5fd2b6c1c2918c9d91c38b90e6be5af&o=&hp=1",
                 PricePerMonth = 2100.00M,
                 CategoryId = 3,
                 AgentId = Guid.Parse("D89B8134-11A2-4F6D-86AC-D571ABFA13FF"),
