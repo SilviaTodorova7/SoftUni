@@ -11,5 +11,7 @@ namespace HouseRentingSystem.Web.Controllers
         {
             return View();
         }
+
+
     }
 }

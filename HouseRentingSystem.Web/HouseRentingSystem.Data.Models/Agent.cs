@@ -27,7 +27,7 @@ namespace HouseRentingSystem.Data.Models
 
         public virtual ApplicationUser User { get; set; } = null!;
 
-        public ICollection<House> OwnedHouses { get; set; }
+        public virtual ICollection<House> OwnedHouses { get; set; }
 
     }
 }
