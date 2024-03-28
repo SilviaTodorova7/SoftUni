@@ -41,7 +41,7 @@ namespace HouseRentingSystem.Data.Configurations
                 Title = "Big House Marina",
                 Address = "North London, UK (near the border)",
                 Description = "A big house for your whole family. Don't miss to buy a house with three bedrooms.",
-                ImageUrl = "https://cf.bstatic.com/xdata/images/hotel/max1024x768/312698222.jpg?k=41a75acebf2081dd38133f5307c1be68e5fd2b6c1c2918c9d91c38b90e6be5af&o=&hp=1",
+                ImageUrl = "https://hips.hearstapps.com/hmg-prod/images/3799-flamingo-ave-siesta-key-print-005-14-flamingo-ave-sarasota-fl-4200x2799-300dpi-1675178841.jpg",
                 PricePerMonth = 2100.00M,
                 CategoryId = 3,
                 AgentId = Guid.Parse("D89B8134-11A2-4F6D-86AC-D571ABFA13FF"),
@@ -66,7 +66,7 @@ namespace HouseRentingSystem.Data.Configurations
                 Title = "Grand House",
                 Address = "Boyana Neighbourhood, Sofia, Bulgaria",
                 Description = "This luxurious house is everything you will need. It is just excellent.",
-                ImageUrl = "https://i.pinimg.com/originals/a6/f5/85/a6f5850a77633c56e4e4ac4f867e3c00.jpg",
+                ImageUrl = "https://cf.bstatic.com/xdata/images/hotel/max1024x768/312698222.jpg?k=41a75acebf2081dd38133f5307c1be68e5fd2b6c1c2918c9d91c38b90e6be5af&o=&hp=1",
                 PricePerMonth = 2000.00M,
                 CategoryId = 2,
                 AgentId = Guid.Parse("D89B8134-11A2-4F6D-86AC-D571ABFA13FF")

@@ -21,7 +21,8 @@ namespace HouseRentingSystem.Web
                 options.UseSqlServer(connectionString));
 
             builder.Services.AddScoped<IHouseService, HouseService>()
-                            .AddScoped<IAgentService, AgentService>();
+                            .AddScoped<IAgentService, AgentService>()
+                            .AddScoped<ICategoryService, CategoryService>();
 
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
