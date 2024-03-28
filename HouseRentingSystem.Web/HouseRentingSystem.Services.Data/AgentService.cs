@@ -3,11 +3,6 @@ using HouseRentingSystem.Data.Models;
 using HouseRentingSystem.Services.Data.Interfaces;
 using HouseRentingSystem.Web.ViewModels.Agent;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HouseRentingSystem.Services.Data
 {
@@ -38,7 +33,7 @@ namespace HouseRentingSystem.Services.Data
             return result;
         }
 
-        public async Task Create(string userId, BecomeAgentFormModel model)
+        public async Task CreateAsync(string userId, BecomeAgentFormModel model)
         {
             Agent newAgent = new Agent()
             {
@@ -48,6 +43,20 @@ namespace HouseRentingSystem.Services.Data
 
             await this.dbContext.Agents.AddAsync(newAgent);
             await this.dbContext.SaveChangesAsync();
+        }
+
+        public async Task<string?> GetAgentIdByUserId(string userId)
+        {
+            Agent? agent = await this.dbContext
+                .Agents
+                .FirstOrDefaultAsync(a => a.UserId.ToString() == userId);
+
+            if (agent == null)
+            {
+                return null;
+            }
+
+            return agent.Id.ToString();
         }
 
         public async Task<bool> HasRentsByUserIdAsync(string userId)

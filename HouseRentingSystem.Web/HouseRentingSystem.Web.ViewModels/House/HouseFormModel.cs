@@ -1,10 +1,5 @@
 ﻿using HouseRentingSystem.Web.ViewModels.Category;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static HouseRentingSystem.Common.EntityValidationConstants.House;
 
 namespace HouseRentingSystem.Web.ViewModels.House
@@ -17,15 +12,15 @@ namespace HouseRentingSystem.Web.ViewModels.House
         }
 
         [Required]
-        [StringLength(TitleMaxLength, MinimumLength = TitleMaxLength)]
+        [StringLength(TitleMaxLength, MinimumLength = TitleMinLength)]
         public string Title { get; set; } = null!;
 
         [Required]
-        [StringLength(AddressMaxLength, MinimumLength = AddressMaxLength)]
+        [StringLength(AddressMaxLength, MinimumLength = AddressMinLength)]
         public string Address { get; set; } = null!;
 
         [Required]
-        [StringLength(DescriptionMaxLength, MinimumLength = DescriptionMaxLength)]
+        [StringLength(DescriptionMaxLength, MinimumLength = DescriptionMinLength)]
         public string Description { get; set; } = null!;
 
         [Required]

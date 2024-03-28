@@ -66,7 +66,7 @@ namespace HouseRentingSystem.Web.Controllers
 
             try
             {
-            await this.agentService.Create(userId, model);
+            await this.agentService.CreateAsync(userId, model);
             }
             catch (Exception)
             {
